@@ -13,6 +13,7 @@
 		8F5502932633AA0900479891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502912633AA0900479891 /* Main.storyboard */; };
 		8F5502952633AA0D00479891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502942633AA0D00479891 /* Assets.xcassets */; };
 		8F5502982633AA0D00479891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502962633AA0D00479891 /* LaunchScreen.storyboard */; };
+		8F5502B32633B1F800479891 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502B22633B1F800479891 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8F5502942633AA0D00479891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F5502972633AA0D00479891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F5502992633AA0D00479891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F5502B22633B1F800479891 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,6 @@
 				8F55028F2633AA0900479891 /* ViewController.swift */,
 				8F5502992633AA0D00479891 /* Info.plist */,
 				8F5502962633AA0D00479891 /* LaunchScreen.storyboard */,
-				8F5502912633AA0900479891 /* Main.storyboard */,
 			);
 			path = Kafein;
 			sourceTree = "<group>";
@@ -118,6 +119,7 @@
 		8F5502A82633ADE300479891 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				8F5502B22633B1F800479891 /* Reachability.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 			files = (
 				8F5502902633AA0900479891 /* ViewController.swift in Sources */,
 				8F55028C2633AA0900479891 /* AppDelegate.swift in Sources */,
+				8F5502B32633B1F800479891 /* Reachability.swift in Sources */,
 				8F55028E2633AA0900479891 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
