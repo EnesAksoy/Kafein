@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Kafein
 
@@ -13,4 +13,10 @@
 
 /* SplashScreen */
 "splashScreen.connectionMessage" = "Please check your internet connection.";
+
+/* HomeScreen */
+"homeScreen.hasPrecipitationLabel" = "Has precipitation?";
+"homeScreen.isDayTimeLabel" = "Time Period";
+"homeScreen.night" = "Night";
+"homeScreen.day" = "Day";
 
