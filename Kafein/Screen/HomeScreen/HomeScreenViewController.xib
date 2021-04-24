@@ -131,12 +131,53 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-B7-FnZ" customClass="KafeinView" customModule="Kafein" customModuleProvider="target">
+                            <rect key="frame" x="2" y="8" width="371" height="25"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bz9-Vz-spy">
+                                    <rect key="frame" x="2" y="5" width="15" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="15" id="5dp-xm-DXi"/>
+                                        <constraint firstAttribute="height" constant="15" id="QYv-ht-CDE"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Q-Ra-w0O" customClass="KafeinTextfield" customModule="Kafein" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="2" width="338" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="homeScreen.textfiledPlaceHolder"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Q6Q-Ra-w0O" firstAttribute="top" secondItem="xI0-B7-FnZ" secondAttribute="top" constant="2" id="2Vc-xg-TeF"/>
+                                <constraint firstAttribute="height" constant="25" id="4IL-vq-ioX"/>
+                                <constraint firstAttribute="trailing" secondItem="Q6Q-Ra-w0O" secondAttribute="trailing" constant="8" id="DNx-m3-ahw"/>
+                                <constraint firstAttribute="bottom" secondItem="Q6Q-Ra-w0O" secondAttribute="bottom" constant="2" id="HcD-Ar-z9z"/>
+                                <constraint firstItem="Bz9-Vz-spy" firstAttribute="centerY" secondItem="xI0-B7-FnZ" secondAttribute="centerY" id="cO2-U7-D7P"/>
+                                <constraint firstItem="Bz9-Vz-spy" firstAttribute="leading" secondItem="xI0-B7-FnZ" secondAttribute="leading" constant="2" id="r6N-Br-ZYp"/>
+                                <constraint firstItem="Q6Q-Ra-w0O" firstAttribute="leading" secondItem="Bz9-Vz-spy" secondAttribute="trailing" constant="8" id="sa1-8x-sqO"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="chooseCorner">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Fv5-Po-TOC" secondAttribute="bottom" id="LM3-4j-zD8"/>
                         <constraint firstItem="Fv5-Po-TOC" firstAttribute="height" secondItem="k7G-he-Usg" secondAttribute="height" multiplier="0.65" id="aea-0M-Uum"/>
+                        <constraint firstItem="xI0-B7-FnZ" firstAttribute="leading" secondItem="k7G-he-Usg" secondAttribute="leading" constant="2" id="j71-Dz-zpP"/>
                         <constraint firstItem="Fv5-Po-TOC" firstAttribute="leading" secondItem="k7G-he-Usg" secondAttribute="leading" id="mqe-5R-Pgb"/>
+                        <constraint firstAttribute="trailing" secondItem="xI0-B7-FnZ" secondAttribute="trailing" constant="2" id="tPB-8t-djh"/>
+                        <constraint firstItem="xI0-B7-FnZ" firstAttribute="top" secondItem="k7G-he-Usg" secondAttribute="top" constant="8" id="ybd-at-3cR"/>
                         <constraint firstAttribute="trailing" secondItem="Fv5-Po-TOC" secondAttribute="trailing" id="zW0-CN-wLN"/>
                     </constraints>
                 </view>

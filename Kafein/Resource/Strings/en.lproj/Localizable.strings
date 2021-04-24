@@ -19,4 +19,5 @@
 "homeScreen.isDayTimeLabel" = "Time Period";
 "homeScreen.night" = "Night";
 "homeScreen.day" = "Day";
+"homeScreen.textfiledPlaceHolder" = "Search";
 
