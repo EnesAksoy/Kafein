@@ -4,8 +4,13 @@
 
   Created by ENES AKSOY on 24.04.2021.
   
- 
- 
- 
- 
 */
+
+/* General */
+
+"ok_button_text" = "OK";
+"messageErrorTitle" = "ERROR";
+
+/* SplashScreen */
+"splashScreen.connectionMessage" = "Please check your internet connection.";
+
