@@ -13,6 +13,7 @@ class HomeScreenViewController: UIViewController {
     // MARK: - Proporties
     
     let locationManager = CLLocationManager()
+    private var viewModel: HomeScreenViewModel!
     
     // MARK: - Life Cycles
 
@@ -20,6 +21,23 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
+        self.viewModel = HomeScreenViewModel()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .notDetermined, .restricted, .denied:
+                    print("No access")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("Access")
+                    self.viewModel.getCurrentLocationsData()
+                @unknown default:
+                break
+            }
+            } else {
+                print("Location services are not enabled")
+        }
+        
+        
     }
 }
 
@@ -28,7 +46,7 @@ class HomeScreenViewController: UIViewController {
 extension HomeScreenViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            // call api
+            self.viewModel.getCurrentLocationsData()
         }
     }
 }
