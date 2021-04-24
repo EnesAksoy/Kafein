@@ -14,6 +14,7 @@
 		8F5502982633AA0D00479891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502962633AA0D00479891 /* LaunchScreen.storyboard */; };
 		8F5502AF2633B1A200479891 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502AE2633B1A200479891 /* SplashScreenViewController.swift */; };
 		8F5502B32633B1F800479891 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502B22633B1F800479891 /* Reachability.swift */; };
+		8F5502BD2633B56200479891 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502BF2633B56200479891 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8F5502992633AA0D00479891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F5502AE2633B1A200479891 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		8F5502B22633B1F800479891 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8F5502BE2633B56200479891 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		8F5502A52633ADCA00479891 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8F5502B82633B53400479891 /* Strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -158,6 +161,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8F5502B82633B53400479891 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				8F5502BF2633B56200479891 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5502982633AA0D00479891 /* LaunchScreen.storyboard in Resources */,
+				8F5502BD2633B56200479891 /* Localizable.strings in Resources */,
 				8F5502952633AA0D00479891 /* Assets.xcassets in Resources */,
 				8F5502932633AA0900479891 /* Main.storyboard in Resources */,
 			);
@@ -252,6 +264,14 @@
 				8F5502972633AA0D00479891 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8F5502BF2633B56200479891 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F5502BE2633B56200479891 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -308,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -363,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
