@@ -21,10 +21,48 @@ class HomeScreenViewModel: NSObject {
         self.apiService = APIService()
     }
     
-    func getCurrentLocationsData() {
+    // MARK: - Functions
+    
+    func getCurrentLocationsData(completion: @escaping(_ error: String) -> Void) {
         apiService.connectApi(endPoint: "locations/v1/cities/ipaddress", parameters: ["q":"\(UIDevice.current.ipAddress() ?? "")"]) { [weak self] response, error in
             guard self != nil else { return }
-            print(response)
+            if let response = response, error.isEmpty {
+                do {
+                    let decoder = JSONDecoder()
+                    let response = try decoder.decode(GeneralInfoModel.self, from: response)
+                    print("\(response.key)")
+                    ObjectStore.shared.currentLocationData = response
+                    self?.getCurrentConditionsData(localizationKey: response.key, completion: { (error) in
+                        if error.isEmpty {
+                            completion("")
+                        }else {
+                            completion(error)
+                        }
+                    })
+                } catch let error {
+                    completion(error.localizedDescription)
+                }
+            }else {
+                completion(error)
+            }
+        }
+    }
+    
+    func getCurrentConditionsData(localizationKey: String, completion: @escaping(_ error: String) -> Void) {
+        apiService.connectApi(endPoint: "currentconditions/v1/\(localizationKey)", parameters: nil) { [weak self] response, error in
+            guard self != nil else { return }
+            if let response = response, error.isEmpty {
+                do {
+                    let decoder = JSONDecoder()
+                    let response = try decoder.decode([WeatherModel].self, from: response)
+                    ObjectStore.shared.currentWeatherData = response
+                    completion("")
+                } catch let error {
+                    completion(error.localizedDescription)
+                }
+            }else {
+                completion(error)
+            }
         }
     }
 }
