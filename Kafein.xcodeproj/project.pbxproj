@@ -27,6 +27,7 @@
 		8F5502EF2634619700479891 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502EE2634619700479891 /* WeatherModel.swift */; };
 		8F5502F22634630A00479891 /* TemperatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502F12634630A00479891 /* TemperatureModel.swift */; };
 		8F5502F52634638900479891 /* TemperatureMetricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502F42634638900479891 /* TemperatureMetricModel.swift */; };
+		8F5502F92634904C00479891 /* KafeinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502F82634904C00479891 /* KafeinLabel.swift */; };
 		EF2B7D0F1A1294902EB8DCCE /* Pods_Kafein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A811B6C83708445149CD85B /* Pods_Kafein.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		8F5502EE2634619700479891 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		8F5502F12634630A00479891 /* TemperatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModel.swift; sourceTree = "<group>"; };
 		8F5502F42634638900479891 /* TemperatureMetricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureMetricModel.swift; sourceTree = "<group>"; };
+		8F5502F82634904C00479891 /* KafeinLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafeinLabel.swift; sourceTree = "<group>"; };
 		9A811B6C83708445149CD85B /* Pods_Kafein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kafein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		8F5502A42633ADBA00479891 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8F5502F72634903800479891 /* Controls */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -258,6 +261,14 @@
 				8F5502F42634638900479891 /* TemperatureMetricModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F5502F72634903800479891 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				8F5502F82634904C00479891 /* KafeinLabel.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		9417223B315FAB8BADE2C4CC /* Pods */ = {
@@ -395,6 +406,7 @@
 				8F5502AF2633B1A200479891 /* SplashScreenViewController.swift in Sources */,
 				8F5502C32633B65700479891 /* UIViewControllerExtensions.swift in Sources */,
 				8F5502F52634638900479891 /* TemperatureMetricModel.swift in Sources */,
+				8F5502F92634904C00479891 /* KafeinLabel.swift in Sources */,
 				8F5502B32633B1F800479891 /* Reachability.swift in Sources */,
 				8F55028E2633AA0900479891 /* SceneDelegate.swift in Sources */,
 				8F5502DD2633CB2C00479891 /* UIDeviceExtensions.swift in Sources */,
