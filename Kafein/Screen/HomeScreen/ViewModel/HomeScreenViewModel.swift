@@ -9,4 +9,19 @@ import UIKit
 
 class HomeScreenViewModel: NSObject {
 
+    // MARK: - Properties
+    
+    private var apiService: APIService!
+    
+    
+    // MARK: - Life Cycles
+    
+    override init() {
+        super.init()
+        self.apiService = APIService()
+    }
+    
+    func getCurrentLocationsData() {
+        apiService.connectApi(endPoint: "locations/v1/cities/ipaddress", parameters: ["":""], completion: <#T##(Data?, String) -> ()#>)
+    }
 }
