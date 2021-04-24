@@ -134,7 +134,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-B7-FnZ" customClass="KafeinView" customModule="Kafein" customModuleProvider="target">
                             <rect key="frame" x="2" y="8" width="371" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bz9-Vz-spy">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="Bz9-Vz-spy">
                                     <rect key="frame" x="2" y="5" width="15" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="15" id="5dp-xm-DXi"/>
@@ -194,6 +194,7 @@
         </view>
     </objects>
     <resources>
+        <image name="search" width="512" height="512"/>
         <image name="true" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
