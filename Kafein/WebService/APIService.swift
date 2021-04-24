@@ -17,7 +17,7 @@ class APIService: NSObject {
     
     // MARK: - Functions
     
-    func connectApi(endPoint: String, parameters: [String:String], completion: @escaping(_ response: Data?, _ error: String) -> ()) {
+    func connectApi(endPoint: String, parameters: [String:String]?, completion: @escaping(_ response: Data?, _ error: String) -> ()) {
         let connectUrl = "\(baseUrl)\(endPoint)?apikey=\(apikey)"
         
         Alamofire.request(connectUrl, method: .get, parameters: parameters).response { (response) in
