@@ -11,7 +11,7 @@ public extension UIViewController {
     
     func createAlert(message: String, title: String, completion: @escaping() -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let OkAction = UIAlertAction(title: "asdad", style: .default) { (_) in
+        let OkAction = UIAlertAction(title: self.localizableGetString(forkey: "ok_button_text"), style: .default) { (_) in
             completion()
         }
         alertController.addAction(OkAction)
