@@ -14,6 +14,8 @@
                 <outlet property="cityNameLabel" destination="nAu-YC-iAW" id="LaE-nu-kOs"/>
                 <outlet property="hasPrecipitationResultImageView" destination="6e1-ME-BG5" id="eB5-FA-J0h"/>
                 <outlet property="isDayTimeResultLabel" destination="K2W-Ud-SuR" id="BPd-mI-NUo"/>
+                <outlet property="searchTableView" destination="QI7-UF-tBG" id="tDg-gM-FcP"/>
+                <outlet property="searchTextField" destination="Q6Q-Ra-w0O" id="eEh-dT-4P5"/>
                 <outlet property="temperatureLabel" destination="Y9Y-kg-Nh6" id="0dG-y8-Elz"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2qJ-WO-tf8"/>
                 <outlet property="weatherTextLabel" destination="B0l-yK-0wA" id="Y6s-75-pxN"/>
@@ -169,11 +171,19 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QI7-UF-tBG">
+                            <rect key="frame" x="2" y="33" width="371" height="217"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="QI7-UF-tBG" firstAttribute="centerX" secondItem="xI0-B7-FnZ" secondAttribute="centerX" id="Kjq-RA-z1h"/>
                         <constraint firstAttribute="bottom" secondItem="Fv5-Po-TOC" secondAttribute="bottom" id="LM3-4j-zD8"/>
+                        <constraint firstItem="QI7-UF-tBG" firstAttribute="width" secondItem="xI0-B7-FnZ" secondAttribute="width" id="NPv-1v-G0g"/>
+                        <constraint firstItem="QI7-UF-tBG" firstAttribute="height" secondItem="k7G-he-Usg" secondAttribute="height" multiplier="0.4" constant="-50" id="WD8-Ce-JXA"/>
                         <constraint firstItem="Fv5-Po-TOC" firstAttribute="height" secondItem="k7G-he-Usg" secondAttribute="height" multiplier="0.65" id="aea-0M-Uum"/>
+                        <constraint firstItem="QI7-UF-tBG" firstAttribute="top" secondItem="xI0-B7-FnZ" secondAttribute="bottom" id="dDV-Lf-Clh"/>
                         <constraint firstItem="xI0-B7-FnZ" firstAttribute="leading" secondItem="k7G-he-Usg" secondAttribute="leading" constant="2" id="j71-Dz-zpP"/>
                         <constraint firstItem="Fv5-Po-TOC" firstAttribute="leading" secondItem="k7G-he-Usg" secondAttribute="leading" id="mqe-5R-Pgb"/>
                         <constraint firstAttribute="trailing" secondItem="xI0-B7-FnZ" secondAttribute="trailing" constant="2" id="tPB-8t-djh"/>

@@ -15,6 +15,7 @@ class HomeScreenViewController: UIViewController {
     private let errorTitleLocalizationKey = "messageErrorTitle"
     private let dayLocalizationKey = "homeScreen.day"
     private let nightLocalizationKey = "homeScreen.night"
+    private let listTableViewCellId = "SearchTableViewCell"
     
     // MARK: - Outlets
     
@@ -23,6 +24,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var hasPrecipitationResultImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var searchTextField: KafeinTextfield!
+    @IBOutlet weak var searchTableView: UITableView!
     
     // MARK: - Proporties
     
@@ -37,6 +40,7 @@ class HomeScreenViewController: UIViewController {
         self.locationManager.delegate = self
         self.viewModel = HomeScreenViewModel()
         self.checkLocationPermit()
+        self.searchTextField.delegate = self
     }
     
     // MARK: - Functions
@@ -72,6 +76,15 @@ class HomeScreenViewController: UIViewController {
         self.temperatureLabel.text = "\(ObjectStore.shared.currentWeatherData?[0].temperature.metric.value ?? 0)°C"
         self.cityNameLabel.text = ObjectStore.shared.currentLocationData?.administrativeArea.localizedName
     }
+    
+    // MARK: - Table View Configuration
+    
+    private func tableViewConfiguration() {
+        self.searchTableView.delegate = self
+        self.searchTableView.dataSource = self
+        self.searchTableView.register(UINib(nibName: self.listTableViewCellId, bundle: nil),
+                                forCellReuseIdentifier: self.listTableViewCellId)
+    }
 }
 
     // MARK: - CLLocationManagerDelegate Methods
@@ -91,3 +104,25 @@ extension HomeScreenViewController: CLLocationManagerDelegate {
         }
     }
 }
+
+// MARK: - UITextFieldDelegate Methods
+
+extension HomeScreenViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentString: NSString = textField.text! as NSString
+        var replacedString: String?
+        let newString: NSString = currentString.replacingCharacters(in: range, with: replacedString ?? "\(string)") as NSString
+        
+        if newString.length >= 2 {
+            replacedString = string.replacingOccurrences(of: " ", with: "+")
+            // call api
+            self.searchTableView.isHidden = false
+        } else if newString.length == 0 {
+            self.searchTableView.isHidden = true
+        }
+        return true
+    }
+}
+
+
