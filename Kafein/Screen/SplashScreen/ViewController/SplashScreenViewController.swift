@@ -26,6 +26,13 @@ class SplashScreenViewController: UIViewController {
             })
             return
         }
-        
+        self.pushViewControllerMethod()
+    }
+    
+    // MARK: - Functions
+    
+    private func pushViewControllerMethod() {
+        let viewController = HomeScreenViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
