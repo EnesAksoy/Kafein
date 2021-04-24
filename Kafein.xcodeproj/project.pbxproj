@@ -21,6 +21,8 @@
 		8F5502D62633C27F00479891 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502D52633C27F00479891 /* APIService.swift */; };
 		8F5502DA2633C7D800479891 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502D92633C7D800479891 /* HomeScreenViewModel.swift */; };
 		8F5502DD2633CB2C00479891 /* UIDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502DC2633CB2C00479891 /* UIDeviceExtensions.swift */; };
+		8F5502E12634557A00479891 /* GeneralInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502E02634557A00479891 /* GeneralInfoModel.swift */; };
+		8F5502E8263456BD00479891 /* AdministrativeAreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5502E7263456BD00479891 /* AdministrativeAreaModel.swift */; };
 		EF2B7D0F1A1294902EB8DCCE /* Pods_Kafein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A811B6C83708445149CD85B /* Pods_Kafein.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		8F5502D52633C27F00479891 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8F5502D92633C7D800479891 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		8F5502DC2633CB2C00479891 /* UIDeviceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtensions.swift; sourceTree = "<group>"; };
+		8F5502E02634557A00479891 /* GeneralInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoModel.swift; sourceTree = "<group>"; };
+		8F5502E7263456BD00479891 /* AdministrativeAreaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrativeAreaModel.swift; sourceTree = "<group>"; };
 		9A811B6C83708445149CD85B /* Pods_Kafein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kafein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				8F5502C12633B64200479891 /* Extensions */,
+				8F5502DF2634556100479891 /* Models */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -234,6 +239,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8F5502DF2634556100479891 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F5502E7263456BD00479891 /* AdministrativeAreaModel.swift */,
+				8F5502E02634557A00479891 /* GeneralInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9417223B315FAB8BADE2C4CC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5502E8263456BD00479891 /* AdministrativeAreaModel.swift in Sources */,
 				8F55028C2633AA0900479891 /* AppDelegate.swift in Sources */,
 				8F5502DA2633C7D800479891 /* HomeScreenViewModel.swift in Sources */,
 				8F5502D62633C27F00479891 /* APIService.swift in Sources */,
@@ -367,6 +382,7 @@
 				8F5502B32633B1F800479891 /* Reachability.swift in Sources */,
 				8F55028E2633AA0900479891 /* SceneDelegate.swift in Sources */,
 				8F5502DD2633CB2C00479891 /* UIDeviceExtensions.swift in Sources */,
+				8F5502E12634557A00479891 /* GeneralInfoModel.swift in Sources */,
 				8F5502C92633BB1E00479891 /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
