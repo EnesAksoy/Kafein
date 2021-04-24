@@ -13,10 +13,20 @@ class HomeScreenViewController: UIViewController {
     // MARK: - Constant
     
     private let errorTitleLocalizationKey = "messageErrorTitle"
+    private let dayLocalizationKey = "homeScreen.day"
+    private let nightLocalizationKey = "homeScreen.night"
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var weatherTextLabel: UILabel!
+    @IBOutlet weak var isDayTimeResultLabel: UILabel!
+    @IBOutlet weak var hasPrecipitationResultImageView: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var cityNameLabel: UILabel!
     
     // MARK: - Proporties
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     private var viewModel: HomeScreenViewModel!
     
     // MARK: - Life Cycles
@@ -26,7 +36,12 @@ class HomeScreenViewController: UIViewController {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.viewModel = HomeScreenViewModel()
-        
+        self.checkLocationPermit()
+    }
+    
+    // MARK: - Functions
+    
+    private func checkLocationPermit() {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:
@@ -38,6 +53,8 @@ class HomeScreenViewController: UIViewController {
                             self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
                                 print("clicked")
                             }
+                        }else {
+                            self.updateView()
                         }
                     }
                 @unknown default:
@@ -46,8 +63,14 @@ class HomeScreenViewController: UIViewController {
             } else {
                 print("Location services are not enabled")
         }
-        
-        
+    }
+    
+    private func updateView() {
+        self.weatherTextLabel.text = ObjectStore.shared.currentWeatherData?[0].weatherText
+        self.isDayTimeResultLabel.text = ObjectStore.shared.currentWeatherData?[0].isDayTime == true ? self.localizableGetString(forkey: self.dayLocalizationKey) : self.localizableGetString(forkey: self.nightLocalizationKey)
+        self.hasPrecipitationResultImageView.image = ObjectStore.shared.currentWeatherData?[0].hasPrecipitation == true ? UIImage(named: "true") : UIImage(named: "false")
+        self.temperatureLabel.text = "\(ObjectStore.shared.currentWeatherData?[0].temperature.metric.value ?? 0)°C"
+        self.cityNameLabel.text = ObjectStore.shared.currentLocationData?.administrativeArea.localizedName
     }
 }
 
@@ -61,6 +84,8 @@ extension HomeScreenViewController: CLLocationManagerDelegate {
                     self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
                         print("clicked")
                     }
+                }else {
+                    self.updateView()
                 }
             }
         }
