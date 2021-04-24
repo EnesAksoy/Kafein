@@ -10,6 +10,10 @@ import CoreLocation
 
 class HomeScreenViewController: UIViewController {
     
+    // MARK: - Constant
+    
+    private let errorTitleLocalizationKey = "messageErrorTitle"
+    
     // MARK: - Proporties
     
     let locationManager = CLLocationManager()
@@ -29,7 +33,13 @@ class HomeScreenViewController: UIViewController {
                     print("No access")
                 case .authorizedAlways, .authorizedWhenInUse:
                     print("Access")
-                    self.viewModel.getCurrentLocationsData()
+                    self.viewModel.getCurrentLocationsData { (error) in
+                        if !error.isEmpty {
+                            self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
+                                print("clicked")
+                            }
+                        }
+                    }
                 @unknown default:
                 break
             }
@@ -46,7 +56,13 @@ class HomeScreenViewController: UIViewController {
 extension HomeScreenViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            self.viewModel.getCurrentLocationsData()
+            self.viewModel.getCurrentLocationsData { (error) in
+                if !error.isEmpty {
+                    self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
+                        print("clicked")
+                    }
+                }
+            }
         }
     }
 }
