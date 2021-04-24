@@ -56,15 +56,87 @@
 		8F55028A2633AA0900479891 /* Kafein */ = {
 			isa = PBXGroup;
 			children = (
-				8F55028B2633AA0900479891 /* AppDelegate.swift */,
-				8F55028D2633AA0900479891 /* SceneDelegate.swift */,
-				8F55028F2633AA0900479891 /* ViewController.swift */,
-				8F5502912633AA0900479891 /* Main.storyboard */,
+				8F5502A92633AE1000479891 /* Application */,
+				8F5502A22633AD9D00479891 /* Common */,
+				8F5502A82633ADE300479891 /* Helper */,
+				8F5502A32633ADB300479891 /* ObjectStore */,
+				8F5502A42633ADBA00479891 /* Presentation */,
+				8F5502A52633ADCA00479891 /* Resource */,
+				8F5502A62633ADD000479891 /* Screen */,
+				8F5502A72633ADD700479891 /* WebService */,
 				8F5502942633AA0D00479891 /* Assets.xcassets */,
-				8F5502962633AA0D00479891 /* LaunchScreen.storyboard */,
+				8F55028F2633AA0900479891 /* ViewController.swift */,
 				8F5502992633AA0D00479891 /* Info.plist */,
+				8F5502962633AA0D00479891 /* LaunchScreen.storyboard */,
+				8F5502912633AA0900479891 /* Main.storyboard */,
 			);
 			path = Kafein;
+			sourceTree = "<group>";
+		};
+		8F5502A22633AD9D00479891 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8F5502A32633ADB300479891 /* ObjectStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ObjectStore;
+			sourceTree = "<group>";
+		};
+		8F5502A42633ADBA00479891 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8F5502A52633ADCA00479891 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8F5502A62633ADD000479891 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		8F5502A72633ADD700479891 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		8F5502A82633ADE300479891 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8F5502A92633AE1000479891 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8F5502AA2633AE2800479891 /* Delegate */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8F5502AA2633AE2800479891 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8F55028B2633AA0900479891 /* AppDelegate.swift */,
+				8F55028D2633AA0900479891 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
