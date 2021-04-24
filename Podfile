@@ -6,5 +6,6 @@ target 'Kafein' do
   use_frameworks!
 
   # Pods for Kafein
+pod 'Alamofire', '~> 4.7.2'
 
 end
