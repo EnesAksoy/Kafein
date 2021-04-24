@@ -9,10 +9,15 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
+    // MARK: - Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if !Reachability.isConnectedToNetwork() {
+            // create alert
+        }
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
 

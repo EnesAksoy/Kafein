@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F55028C2633AA0900479891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55028B2633AA0900479891 /* AppDelegate.swift */; };
 		8F55028E2633AA0900479891 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55028D2633AA0900479891 /* SceneDelegate.swift */; };
-		8F5502902633AA0900479891 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55028F2633AA0900479891 /* ViewController.swift */; };
 		8F5502932633AA0900479891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502912633AA0900479891 /* Main.storyboard */; };
 		8F5502952633AA0D00479891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502942633AA0D00479891 /* Assets.xcassets */; };
 		8F5502982633AA0D00479891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5502962633AA0D00479891 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		8F5502882633AA0900479891 /* Kafein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kafein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F55028B2633AA0900479891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F55028D2633AA0900479891 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8F55028F2633AA0900479891 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8F5502922633AA0900479891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F5502942633AA0D00479891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F5502972633AA0D00479891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				8F5502A62633ADD000479891 /* Screen */,
 				8F5502A72633ADD700479891 /* WebService */,
 				8F5502942633AA0D00479891 /* Assets.xcassets */,
-				8F55028F2633AA0900479891 /* ViewController.swift */,
 				8F5502992633AA0D00479891 /* Info.plist */,
 				8F5502962633AA0D00479891 /* LaunchScreen.storyboard */,
 			);
@@ -231,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5502902633AA0900479891 /* ViewController.swift in Sources */,
 				8F55028C2633AA0900479891 /* AppDelegate.swift in Sources */,
 				8F5502AF2633B1A200479891 /* SplashScreenViewController.swift in Sources */,
 				8F5502B32633B1F800479891 /* Reachability.swift in Sources */,
