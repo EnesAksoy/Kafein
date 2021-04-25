@@ -13,7 +13,7 @@ class APIService: NSObject {
     // MARK: - Constants
     
     private let baseUrl = URL(string: "http://dataservice.accuweather.com/")!
-    private let apikey = "WVrBSK9dVO9jPH92b9AD4jt5Jt9Tm40O"
+    private let apikey = "hADv4K25RQCEfXX1hbR0mG7fZEcCkX0T"
     
     // MARK: - Functions
     
