@@ -34,6 +34,8 @@
 		8F5503062634B58B00479891 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5503042634B58B00479891 /* SearchTableViewCell.xib */; };
 		8F55030C2635152A00479891 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55030A2635152A00479891 /* DetailScreenViewController.swift */; };
 		8F55030D2635152A00479891 /* DetailScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F55030B2635152A00479891 /* DetailScreenViewController.xib */; };
+		8F5503122635187D00479891 /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5503112635187D00479891 /* DetailScreenViewModel.swift */; };
+		8F550316263519D700479891 /* DetailScreenViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F550315263519D700479891 /* DetailScreenViewModelDelegate.swift */; };
 		EF2B7D0F1A1294902EB8DCCE /* Pods_Kafein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A811B6C83708445149CD85B /* Pods_Kafein.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		8F5503042634B58B00479891 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		8F55030A2635152A00479891 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		8F55030B2635152A00479891 /* DetailScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailScreenViewController.xib; sourceTree = "<group>"; };
+		8F5503112635187D00479891 /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
+		8F550315263519D700479891 /* DetailScreenViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModelDelegate.swift; sourceTree = "<group>"; };
 		9A811B6C83708445149CD85B /* Pods_Kafein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kafein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,6 +303,8 @@
 		8F5503082635150300479891 /* DetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8F550314263519A900479891 /* Protocol */,
+				8F5503102635186900479891 /* ViewModel */,
 				8F5503092635150D00479891 /* ViewController */,
 				8F55030B2635152A00479891 /* DetailScreenViewController.xib */,
 			);
@@ -311,6 +317,22 @@
 				8F55030A2635152A00479891 /* DetailScreenViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8F5503102635186900479891 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8F5503112635187D00479891 /* DetailScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8F550314263519A900479891 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8F550315263519D700479891 /* DetailScreenViewModelDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		9417223B315FAB8BADE2C4CC /* Pods */ = {
@@ -448,12 +470,14 @@
 				8F5502D62633C27F00479891 /* APIService.swift in Sources */,
 				8F5502F22634630A00479891 /* TemperatureModel.swift in Sources */,
 				8F5502EC26345F9700479891 /* ObjectStore.swift in Sources */,
+				8F550316263519D700479891 /* DetailScreenViewModelDelegate.swift in Sources */,
 				8F5502EF2634619700479891 /* WeatherModel.swift in Sources */,
 				8F5502AF2633B1A200479891 /* SplashScreenViewController.swift in Sources */,
 				8F55030C2635152A00479891 /* DetailScreenViewController.swift in Sources */,
 				8F5503052634B58B00479891 /* SearchTableViewCell.swift in Sources */,
 				8F5502C32633B65700479891 /* UIViewControllerExtensions.swift in Sources */,
 				8F5502F52634638900479891 /* TemperatureMetricModel.swift in Sources */,
+				8F5503122635187D00479891 /* DetailScreenViewModel.swift in Sources */,
 				8F5502F92634904C00479891 /* KafeinLabel.swift in Sources */,
 				8F5502B32633B1F800479891 /* Reachability.swift in Sources */,
 				8F55028E2633AA0900479891 /* SceneDelegate.swift in Sources */,

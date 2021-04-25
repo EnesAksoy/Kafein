@@ -14,6 +14,7 @@ class DetailScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = ObjectStore.shared.selectedCityData?.administrativeArea.localizedName
     }
     
     

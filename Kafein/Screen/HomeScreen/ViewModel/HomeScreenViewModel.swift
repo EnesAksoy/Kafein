@@ -13,7 +13,6 @@ class HomeScreenViewModel: NSObject {
     
     private var apiService: APIService!
     
-    
     // MARK: - Life Cycles
     
     override init() {
