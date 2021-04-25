@@ -19,6 +19,7 @@ class DetailScreenViewModel: NSObject {
     override init() {
         super.init()
         self.apiService = APIService()
+        self.getWeatherDetailData()
     }
     
     // MARK: - Functions
@@ -39,6 +40,4 @@ class DetailScreenViewModel: NSObject {
             }
         }
     }
-    
-    
 }

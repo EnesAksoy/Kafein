@@ -194,7 +194,6 @@ extension HomeScreenViewController: UITextFieldDelegate {
                 }
             }
         } else if newString.length == 0 {
-//            self.searchTableView.isHidden = true
             self.getSearchedKeyWord()
         }
         return true
@@ -213,7 +212,6 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         case .none:
             return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
