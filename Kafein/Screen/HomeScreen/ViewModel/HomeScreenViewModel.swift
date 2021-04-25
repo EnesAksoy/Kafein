@@ -23,6 +23,7 @@ class HomeScreenViewModel: NSObject {
     // MARK: - Functions
     
     func getCurrentLocationsData(completion: @escaping(_ error: String) -> Void) {
+        LoadingView.showLoadingView()
         apiService.connectApi(endPoint: "locations/v1/cities/ipaddress", parameters: ["q":"\(UIDevice.current.ipAddress() ?? "")"]) { [weak self] response, error in
             guard self != nil else { return }
             if let response = response, error.isEmpty {

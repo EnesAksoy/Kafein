@@ -25,6 +25,7 @@ class DetailScreenViewModel: NSObject {
     // MARK: - Functions
     
     private func getWeatherDetailData() {
+        LoadingView.showLoadingView()
         apiService.connectApi(endPoint: "currentconditions/v1/\(ObjectStore.shared.selectedCityData?.key ?? "")", parameters: nil) { [weak self] response, error in
             guard self != nil else { return }
             if let response = response, error.isEmpty {

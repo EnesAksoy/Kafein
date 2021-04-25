@@ -53,11 +53,13 @@ extension DetailScreenViewController: DetailScreenViewModelDelegate {
     func updateView(response: [WeatherModel]?, error: String) {
         if !error.isEmpty {
             self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
+                LoadingView.removeLoadingView()
                 self.navigationController?.popViewController(animated: true)
             }
         }else {
             self.weatherData = response
             self.updateView()
+            LoadingView.removeLoadingView()
         }
     }
 }

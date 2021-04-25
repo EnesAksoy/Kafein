@@ -72,6 +72,7 @@ class HomeScreenViewController: UIViewController {
                     print("Access")
                     self.viewModel.getCurrentLocationsData { [weak self] error in
                         guard self != nil else { return }
+                        LoadingView.removeLoadingView()
                         if !error.isEmpty {
                             self?.createAlert(message: error, title: self?.localizableGetString(forkey: self?.errorTitleLocalizationKey ?? "") ?? "") {
                                 self?.weatherView.isHidden = true
@@ -146,6 +147,7 @@ extension HomeScreenViewController: CLLocationManagerDelegate {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             self.viewModel.getCurrentLocationsData { [weak self] error in
                 guard self != nil else { return }
+                LoadingView.removeLoadingView()
                 if !error.isEmpty {
                     self?.createAlert(message: error, title: self?.localizableGetString(forkey: self?.errorTitleLocalizationKey ?? "") ?? "") {
                         self?.weatherView.isHidden = true
