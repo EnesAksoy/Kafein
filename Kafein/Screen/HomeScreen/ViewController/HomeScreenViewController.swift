@@ -55,6 +55,11 @@ class HomeScreenViewController: UIViewController {
         self.tableViewConfiguration()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     // MARK: - Functions
     
     private func checkLocationPermit() {
@@ -231,7 +236,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             print("default")
         }
-        
-        // go to detail screen
+        let viewController = DetailScreenViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
