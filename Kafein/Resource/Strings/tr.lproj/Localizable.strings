@@ -1,0 +1,23 @@
+/*
+  Localizable.strings
+  Kafein
+
+  Created by ENES AKSOY on 24.04.2021.
+  
+*/
+
+/* General */
+
+"ok_button_text" = "TAMAM";
+"messageErrorTitle" = "HATA";
+
+/* SplashScreen */
+"splashScreen.connectionMessage" = "Lütfen internet bağlantınızı kontrol ediniz.";
+
+/* HomeScreen */
+"homeScreen.hasPrecipitationLabel" = "Yağış var mı?";
+"homeScreen.isDayTimeLabel" = "Zaman Dilimi";
+"homeScreen.night" = "Gece";
+"homeScreen.day" = "Gündüz";
+"homeScreen.textfiledPlaceHolder" = "Ara";
+
