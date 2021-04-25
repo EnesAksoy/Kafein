@@ -65,4 +65,21 @@ class HomeScreenViewModel: NSObject {
             }
         }
     }
+    
+    func getSearchApi(searchText: String, completion: @escaping(_ response: [GeneralInfoModel]?, _ error: String) -> Void) {
+        apiService.connectApi(endPoint: "locations/v1/cities/autocomplete", parameters: ["q":"\(searchText)"]) { [weak self] response, error in
+            guard self != nil else { return }
+            if let response = response, error.isEmpty {
+                do {
+                    let decoder = JSONDecoder()
+                    let response = try decoder.decode([GeneralInfoModel].self, from: response)
+                    completion(response, "")
+                } catch let error {
+                    completion(nil, error.localizedDescription)
+                }
+            }else {
+                completion(nil, error)
+            }
+        }
+    }
 }
