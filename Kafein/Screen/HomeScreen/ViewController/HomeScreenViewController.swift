@@ -233,10 +233,13 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         switch self.tableViewType {
         case .search:
             self.saveLastSearchedKey(keyWord: self.searchArray?[indexPath.row].administrativeArea.localizedName ?? "")
+            ObjectStore.shared.selectedCityData = self.searchArray?[indexPath.row]
+            let viewController = DetailScreenViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case.searched:
+            self.searchTextField.text = self.searchedArray?[indexPath.row]
         default:
             print("default")
         }
-        let viewController = DetailScreenViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

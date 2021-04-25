@@ -13,4 +13,5 @@ class ObjectStore {
     
     var currentLocationData: GeneralInfoModel?
     var currentWeatherData: [WeatherModel]?
+    var selectedCityData: GeneralInfoModel?
 }
