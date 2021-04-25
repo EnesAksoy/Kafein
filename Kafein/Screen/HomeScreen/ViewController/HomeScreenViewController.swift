@@ -31,6 +31,7 @@ class HomeScreenViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     private var viewModel: HomeScreenViewModel!
+    private var searchArray: [GeneralInfoModel]?
     
     // MARK: - Life Cycles
 
@@ -41,6 +42,7 @@ class HomeScreenViewController: UIViewController {
         self.viewModel = HomeScreenViewModel()
         self.checkLocationPermit()
         self.searchTextField.delegate = self
+        self.tableViewConfiguration()
     }
     
     // MARK: - Functions
@@ -52,13 +54,14 @@ class HomeScreenViewController: UIViewController {
                     print("No access")
                 case .authorizedAlways, .authorizedWhenInUse:
                     print("Access")
-                    self.viewModel.getCurrentLocationsData { (error) in
+                    self.viewModel.getCurrentLocationsData { [weak self] error in
+                        guard self != nil else { return }
                         if !error.isEmpty {
-                            self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
+                            self?.createAlert(message: error, title: self?.localizableGetString(forkey: self?.errorTitleLocalizationKey ?? "") ?? "") {
                                 print("clicked")
                             }
                         }else {
-                            self.updateView()
+                            self?.updateView()
                         }
                     }
                 @unknown default:
@@ -92,13 +95,14 @@ class HomeScreenViewController: UIViewController {
 extension HomeScreenViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            self.viewModel.getCurrentLocationsData { (error) in
+            self.viewModel.getCurrentLocationsData { [weak self] error in
+                guard self != nil else { return }
                 if !error.isEmpty {
-                    self.createAlert(message: error, title: self.localizableGetString(forkey: self.errorTitleLocalizationKey)) {
+                    self?.createAlert(message: error, title: self?.localizableGetString(forkey: self?.errorTitleLocalizationKey ?? "") ?? "") {
                         print("clicked")
                     }
                 }else {
-                    self.updateView()
+                    self?.updateView()
                 }
             }
         }
@@ -116,8 +120,22 @@ extension HomeScreenViewController: UITextFieldDelegate {
         
         if newString.length >= 2 {
             replacedString = string.replacingOccurrences(of: " ", with: "+")
-            // call api
-            self.searchTableView.isHidden = false
+            self.viewModel.getSearchApi(searchText: newString as String) { [weak self] response, error in
+                guard self != nil else { return }
+                if !error.isEmpty {
+                    self?.createAlert(message: error, title: self?.localizableGetString(forkey: self?.errorTitleLocalizationKey ?? "") ?? "") {
+                        print("clicked")
+                    }
+                }else {
+                    if let response = response, response.count > 0 {
+                        self?.searchArray = response
+                        self?.searchTableView.isHidden = false
+                        self?.searchTableView.reloadData()
+                    }else {
+                        self?.searchTableView.isHidden = true
+                    }
+                }
+            }
         } else if newString.length == 0 {
             self.searchTableView.isHidden = true
         }
@@ -125,4 +143,13 @@ extension HomeScreenViewController: UITextFieldDelegate {
     }
 }
 
-
+extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchArray?.count ?? 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
+        cell.configureCell(cityName: self.searchArray?[indexPath.row].administrativeArea.localizedName ?? "")
+        return cell
+    }
+}

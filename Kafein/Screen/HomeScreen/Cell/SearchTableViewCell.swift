@@ -24,4 +24,10 @@ class SearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Configure Cell Method
+    
+    func configureCell(cityName: String) {
+        self.cityNameLabel.text = cityName
+    }
+    
 }
